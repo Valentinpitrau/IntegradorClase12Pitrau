@@ -1,12 +1,16 @@
-import express from 'express'
-import Productos from './api/productos.js'
+
+const express = require('express');
+
+const app = express()
+
+const Productos = require('./api/productos')
 
 const server = require('http').Server(app)
 const io = require('socket.io')(server)
 
+
 let productos = new Productos()
 
-const app = express()
 
 app.use(express.static('public'))
 
